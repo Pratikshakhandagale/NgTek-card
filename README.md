@@ -1,28 +1,70 @@
-# MyTeam
+# Ngtek-card Lib
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
-## Development server
+This library is for Angular  projects to build a bootstrap card from passed data.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Installing
+npm install ngtek-card --save
 
-## Code scaffolding
+Also install bootstrap-4.x for the design.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Implementation
+Simply first import the module in your app.module.ts as shown below
+import { NgtekCardModule} from 'ngtek-card';
 
-## Build
+imports : [NgtekCardModule]
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Now, pass proper configuration so as to bootstrap card.
 
-## Running unit tests
+Displying complete ngtek-card
+Code in component.html
+app.component.html
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<div class="row">
+    <div class="col-md-3 text-center p-5" *ngFor="let cdata of cardData">
+        <lib-ngtek-card [data]="cdata"></lib-ngtek-card>
+    </div>
+</div>
 
-## Running end-to-end tests
+# Code in component.ts
+import { Component, OnInit } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module'
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'app';
+  cardData = [{
+    header: 'HEADER1',
+    body: {
+      title: 'Title1',
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      image: [{ imageTitle: "MyImage", src: "/assets/images/innovation_tile_portal.jpg" },
+      { imageTitle: "MyImage", src: "/assets/images/aa.jpg" },
+      { imageTitle: "MyImage", src: "/assets/images/bb.jpg" },
+      { imageTitle: "MyImage", src: "/assets/images/ee.jpg" },
+      { imageTitle: "MyImage", src: "/assets/images/portal_ideation_course_week01_overview.jpg" }],
+      rotationTime: 500, // Time to choose random image after specific time and show in card (specified number of milliseconds.)
+    },
+    footer: 'Footer1',
+  },
+  {
+    header: 'Header2',
+    body: {
+      title: 'Title2',
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      image: [{ imageTitle: "MyImage", src: "/assets/images/innovation_tile_portal.jpg" },
+      { imageTitle: "MyImage", src: "/assets/images/cc.jpg" },
+      { imageTitle: "MyImage", src: "/assets/images/dd.jpg" }]
+    },
+    footer: 'Footer2',
+  },
+  ];
 
-## Further help
+  ngOnInit() {
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  }
+}
