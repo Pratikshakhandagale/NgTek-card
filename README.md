@@ -1,12 +1,20 @@
 # Ngtek-card Lib
 
 
-This library is for Angular  projects to build a bootstrap card from passed data.
+This library is for Angular  projects to build a bootstrap card from passed data.As bootstrap card have header, body and footer, these all thing can be configured to show or not to show by using this library.
 
 # Installing
 npm install ngtek-card --save
 
 Also install bootstrap-4.x for the design.
+
+
+# Configs provided
+
+User can pass specific amount of data so as to make the card looking like user wants. For example 
+1) Some user needs only body and header or body and footer.
+
+As the user paases the data in the data node the card will be generated.
 
 # Implementation
 Simply first import the module in your app.module.ts as shown below
@@ -68,3 +76,4 @@ export class AppComponent {
 
   }
 }
+
