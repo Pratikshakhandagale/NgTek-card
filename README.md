@@ -26,12 +26,13 @@ Now, pass proper configuration so as to bootstrap card.
 Displying complete ngtek-card
 Code in component.html
 app.component.html
-
+```
 <div class="row">
     <div class="col-md-3 text-center p-5" *ngFor="let cdata of cardData">
         <lib-ngtek-card [data]="cdata"></lib-ngtek-card>
     </div>
 </div>
+```
 
 # Code in component.ts
 ```
