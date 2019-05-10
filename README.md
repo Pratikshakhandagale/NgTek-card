@@ -34,6 +34,7 @@ app.component.html
 </div>
 
 # Code in component.ts
+```
 import { Component, OnInit } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module'
 
@@ -75,3 +76,4 @@ export class AppComponent {
 
   }
 }
+```
